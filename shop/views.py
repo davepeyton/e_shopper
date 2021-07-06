@@ -1,13 +1,12 @@
 from django.shortcuts import render
+from .models import Products
+
+
 
 # Create your views here.
 
 def index(request):
-    shop = [
-        {'title': 'Bikes'},
-        {'title': 'Parts'},
-    ]
-    return render(request, 'shop/index.html', {
-        'show_shop': False,
-        'shop': shop
-    })
+    product_objects = Products.objects.all()
+    return render(request, 'shop/index.html',{'product_objects':product_objects})
+
+  
