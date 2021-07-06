@@ -10,6 +10,13 @@
 </head>
 <body>
     <h1>All Products</h1>
-    <p>Special Offers</p>
+       <p>Special Offers</p>
+    {% if show_shop %}
+      {% for shop_item in shop %}
+         <p>{{ shop_itemtitle }}</p>
+          {% endfor %}
+    {% else %}
+       <p>No Bikes for sale at this time</p>
+    {% endif %}
 </body>
 </html>

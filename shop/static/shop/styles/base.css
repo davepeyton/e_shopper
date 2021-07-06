@@ -5,10 +5,13 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  background-color: #ccc3db;
-  color: #3e3e41;
+  background: url('/static/shop/media/homepage_background_cropped.jpg') no-repeat center center fixed;
+	background-size: cover;
+  background-color: #908204;
+  height: calc(100vh - 164px);
+  color: rgb(250, 250, 250);
+  font-family: "Akya";
+
 }
 
 h1,
