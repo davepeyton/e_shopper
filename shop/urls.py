@@ -1,7 +1,6 @@
 from django.urls import path
-
-from . import views
+from django.http import HttpResponce
 
 urlpatterns = [
-  path('shop/', views.index) # my domain.com/shop
+    path('shop/', views.index)
 ]
