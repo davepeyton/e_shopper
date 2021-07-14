@@ -111,7 +111,7 @@
 
      </div>
 </body>
-   <script type="text/javascript">
+<script type="text/javascript">
 console.log('test this fucking code yo, js');
 
 if(localStorage.getItem('cart')==null){
@@ -123,7 +123,7 @@ else{
 
 $(document).on('click','.atc',function(){
      console.log("you added to cart");
-     let item_id = this.id.toString();
+     var item_id = this.id.toString();
      console.log(item_id);
 
     if(cart[item_id]!=undefined){
@@ -139,17 +139,24 @@ $(document).on('click','.atc',function(){
     document.getElementById("cart").innerHTML = "cart("+ Object.keys(cart).length +")";
 
     });
-     DisplayCart(cart);
-    function DisplayCart(cart){
-         var cartString ="";
-         cartString += "<h6>Items in Cart</h6>";
-         var cartIndex = 1;
-         for(var x in cart){
-              cartString += cartIndex;
-              cartString += document.getElementById("nm"+x).innerHTML + "Qty:" + cart[x] + "</br>";
-              cartIndex+=1;
-         }
-         document.getElementById("cart").setAttribute('date-content',cartString);
+
+
+    displayCart(cart);
+    function displayCart(cart) {    //cart is perameter actually
+
+        var cartString = "";
+        cartString +=  "<h5>This is your cart</h5>";
+
+        var cartIndex = 1;
+        for (var x in cart){
+            cartString += cartIndex;
+            cartString += document.getElementById("nm" + x).innerHTML +" | " + "Qty:" + cart[x][0] + "</br>" ;
+            cartIndex +=1;
+
+        }
+
+        cartString += "<br><a class='btn btn-warning' id='checkout' href='/checkout'>checkout</a>"; 
+         document.getElementById("cart").setAttribute('data-content',cartString);
          $('[data-toggle="popover"]').popover();
     }
    
