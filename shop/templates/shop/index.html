@@ -33,7 +33,7 @@
                                <a class="nav-link" href="#">Features</a>
                              </li>
                              <li class="nav-item">
-                                 <button id="cart" type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+                                 <button id="cart" data-html="true" type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
                                   sagittis lacus vel augue laoreet rutrum faucibus.">
                                    Cart(0)
                                  </button>
@@ -138,8 +138,9 @@ $(document).on('click','.atc',function(){
     document.getElementById("cart").innerHTML = "cart("+Object.keys(cart).length +")";
     });
     $(function () {
-  $('[data-toggle="popover"]').popover()
-})
+  $('[data-toggle="popover"]').popover();
+document.getElementById("cart").setAttribute('data-content','<h6>Items in cart</h6>');
+});
    </script>
 </html>
 
