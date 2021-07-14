@@ -139,18 +139,18 @@ $(document).on('click','.atc',function(){
     document.getElementById("cart").innerHTML = "cart("+ Object.keys(cart).length +")";
 
     });
-    DisplayCart(cart);
+     DisplayCart(cart);
     function DisplayCart(cart){
-         let cartString ="";
+         var cartString ="";
          cartString += "<h6>Items in Cart</h6>";
-         let cartIndex = 1;
-         for(let x in cart){
+         var cartIndex = 1;
+         for(var x in cart){
               cartString += cartIndex;
-              cartString += document.getElementById("nm"+x).innerHTML + "Qty:" + cart[x]
+              cartString += document.getElementById("nm"+x).innerHTML + "Qty:" + cart[x] + "</br>";
               cartIndex+=1;
          }
          document.getElementById("cart").setAttribute('date-content',cartString);
-         $('[data-toggle="]').popover();
+         $('[data-toggle="popover"]').popover();
     }
    
 
